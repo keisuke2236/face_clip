@@ -8,7 +8,7 @@ import argparse
 # 環境に合わせてパスを調整してください
 CASCADE_PATH = 'haarcascade_frontalface_default.xml'
 OUTPUT_SIZE = (80, 80)  # 出力画像のピクセルサイズ (幅, 高さ)
-OUTPUT_FORMAT = 'PNG'  # 出力画像のフォーマット (JPEGなども可)
+OUTPUT_FORMAT = 'jpg'  # 出力画像のフォーマット (JPEGなども可)
 FACE_MARGIN_RATIO = 2.0 # 顔検出領域に対するトリミング領域の倍率 (1.0だと顔ギリギリ)
 
 # --- 関数定義 ---
@@ -272,7 +272,7 @@ if __name__ == "__main__":
         for filename in os.listdir(input_path):
             input_file = os.path.join(input_path, filename)
             # 画像ファイルかどうかを簡易的に判定 (拡張子で)
-            if os.path.isfile(input_file) and filename.lower().endswith(('.webp', '.png', '.jpg', '.jpeg', '.bmp', '.gif', '.tiff')):
+            if os.path.isfile(input_file) and filename.lower().endswith(('.webp', '.png', '.jpg', '.jpeg', '.bmp', '.gif', '.tiff', '.WEBP', '.PNG', '.JPG', '.JPEG', '.BMP', '.GIF', '.TIFF', '.jfif', '.JPE', '.svg', '.SVG', '.heic', '.HEIC', '.avif', '.AVIF')):
                 base, ext = os.path.splitext(filename)
                 output_filename = f"{base}_edited.{args.format.lower()}"
                 output_file = os.path.join(output_dir, output_filename)
