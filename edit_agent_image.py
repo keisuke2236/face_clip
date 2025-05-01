@@ -8,7 +8,7 @@ import argparse
 # 環境に合わせてパスを調整してください
 CASCADE_PATH = 'haarcascade_frontalface_default.xml'
 OUTPUT_SIZE = (80, 80)  # 出力画像のピクセルサイズ (幅, 高さ)
-OUTPUT_FORMAT = 'jpg'  # 出力画像のフォーマット (JPEGなども可)
+OUTPUT_FORMAT = 'png'  # 出力画像のフォーマット (JPEGなども可)
 FACE_MARGIN_RATIO = 2.0 # 顔検出領域に対するトリミング領域の倍率 (1.0だと顔ギリギリ)
 
 # --- 関数定義 ---
